@@ -4,14 +4,16 @@ const {
     getBirds, 
     getBird, 
     deleteBird,
-    addBird
+    addBird,
+    updateBird
 } = require('../controller/birds.js');
 
 // ruta raíz de este router
 router.get('/',getBirds);
 router.get('/:name',getBird);
 router.get('/:name/delete',deleteBird);
-router.post('/add',addBird)
+router.post('/add',addBird);
+router.put('/update',updateBird)
 
 
 

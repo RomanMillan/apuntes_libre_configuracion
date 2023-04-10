@@ -37,10 +37,19 @@ const addBird = (req,res)=>{
     res.send('Añadido pajaro')
 }
 
+/* actualizar pajaro */
+const updateBird = (req,res) =>{
+    const updateBird = req.body;
+    const idBird = updateBird._id;
+    const bird = db.birds.findOne({_id:idBird});
+    db.birds.update(bird,updateBird);
+    res.send('pajaro Actualizado')
+}
 
 module.exports = {
     getBirds, 
     getBird, 
     deleteBird,
-    addBird
+    addBird,
+    updateBird
 };

@@ -3,11 +3,9 @@ const app = express();
 
 const birds = require('./routes/birds.js');
 
+app.use(express.json())
 
 app.use('/birds',birds);
-app.use('/birds/:name',birds);
-app.use('/birds/:name/delete',birds);
-app.use('/birds/add',birds)
 
 app.get('/',(req,res)=>{
     res.send('Esta es la página principal');
