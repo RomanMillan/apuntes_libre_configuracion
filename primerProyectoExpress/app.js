@@ -3,6 +3,7 @@ const app = express();
 require('dotenv').config();
 const birds = require('./routes/birds.js');
 const birdData = require('./routes/bird.js');
+const { userPost } = require('./routes/user.js');
 const { dbConnection } = require('./database/config');
 
 /* usando la base de datos Mongodb */
@@ -10,18 +11,18 @@ const { dbConnection } = require('./database/config');
 async function connectAtlas(){ //await no se puede crear en el primer nivel y por eso tiene que tner la funcion
     await dbConnection();
 }
-connectAtlas()
+connectAtlas();
 
-app.use(express.json())
+app.use(express.json());
 
-app.use('/birdData',birdData)
+app.use('/birdData',birdData);
+app.use('/userPost',userPost);
 
-
-/* usando base de datos de prueba (diskdb) */
+/* Usando base de datos de prueba (diskdb) */
 app.use('/birds',birds);
 
 
-/* sin usar ninguna base de datos */
+/* Sin usar ninguna base de datos */
 app.get('/',(req,res)=>{
     res.send('Esta es la página principal');
 });
