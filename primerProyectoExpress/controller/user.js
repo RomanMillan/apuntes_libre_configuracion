@@ -2,8 +2,9 @@
 const User = require('../models/user');
 const bcryptjs = require('bcryptjs');
 
+
 /* Añadir un usuario nuevo a la BD */
-const userPost = async(req, res) => {
+async function userPost (req, res) {
     
     // Obtenemos los datos
     const { name, email, password, rol } = req.body;
@@ -30,4 +31,4 @@ const userPost = async(req, res) => {
     });
 }
 
-module.export = {userPost}
+module.exports = userPost;

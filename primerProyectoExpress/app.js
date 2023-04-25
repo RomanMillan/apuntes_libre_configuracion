@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express();
+
 require('dotenv').config();
+
 const birds = require('./routes/birds.js');
 const birdData = require('./routes/bird.js');
-const { userPost } = require('./routes/user.js');
-const { dbConnection } = require('./database/config');
+const userPost = require('./routes/user.js');
+
+const { dbConnection } = require('./database/config.js');
 
 /* usando la base de datos Mongodb */
 // DATABASE CONNECTION 
@@ -17,6 +20,7 @@ app.use(express.json());
 
 app.use('/birdData',birdData);
 app.use('/userPost',userPost);
+
 
 /* Usando base de datos de prueba (diskdb) */
 app.use('/birds',birds);
@@ -34,7 +38,10 @@ app.get('/json',(req,res)=>{
 app.post('/registro',(req,res)=>{
     res.send("El usuario a sido registrado");
 })
-console.log(process.env.PRUEBA);
+
+
+
+/* Establece la conexión */
 const PORT = process.env.PORT
 
 app.listen(PORT,()=>{
