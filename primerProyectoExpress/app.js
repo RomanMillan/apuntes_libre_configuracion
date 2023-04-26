@@ -6,6 +6,7 @@ require('dotenv').config();
 const birds = require('./routes/birds.js');
 const birdData = require('./routes/bird.js');
 const userPost = require('./routes/user.js');
+const auth = reqquire('./routes/user.js');
 
 const { dbConnection } = require('./database/config.js');
 

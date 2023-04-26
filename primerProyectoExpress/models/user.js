@@ -19,6 +19,10 @@ const UserSchema = Schema({
         type: String,
         required: [true, 'El rol es obligatorio'],
     },
+    active:{
+        type: Boolean,
+        default: true
+    }
 });
 
 module.exports = model( 'User', UserSchema );
