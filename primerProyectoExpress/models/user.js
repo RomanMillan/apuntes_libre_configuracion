@@ -18,11 +18,18 @@ const UserSchema = Schema({
     rol:{
         type: String,
         required: [true, 'El rol es obligatorio'],
+        emun: ['ADMIN', 'USER']
     },
     active:{
         type: Boolean,
         default: true
     }
 });
+
+UserSchema.methods.toJSON = function() {
+    const { __v, password, _id, ...usuario} = this.toObject();
+    usuario.uid = _id;
+    return usuario;
+}
 
 module.exports = model( 'User', UserSchema );
