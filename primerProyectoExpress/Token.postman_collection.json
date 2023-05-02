@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "89ea4c16-96db-45a3-a8af-14a1f2c42b0c",
+		"name": "Token",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24160753"
+	},
+	"item": [
+		{
+			"name": "crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Deon\",\r\n    \"email\":\"deon@gmail.com\",\r\n    \"password\": \"1277773\",\r\n    \"rol\": \"ADMIN\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5800/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5800",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hacer login (obtener token)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"deon@gmail.com\",\r\n    \"password\": \"1277773\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5800/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5800",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrar usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDUxNmQxNmRiODFhOTIxNzg2NGFlMGYiLCJpYXQiOjE2ODMwNTgzMzQsImV4cCI6MTY4MzA3MjczNH0.CHudvRaVPzcA80ndSiGeFw7h9a4Me1krf2CyfysOlKg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"deon@gmail.com\",\r\n    \"password\": \"1277773\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5800/user/64516c2e11608fdab1480e52",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5800",
+					"path": [
+						"user",
+						"64516c2e11608fdab1480e52"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -35,7 +35,7 @@ async function addUser (req, res) {
 /* Borra usuario */
 async function deleteUser(req,res){
     const id = req.params.id;
-    const user = await User.findByIdAndUpdate(id,{"state": false});
+    const user = await User.findByIdAndUpdate(id,{"active": false});
     const token = req.user;
     res.json({
         user, 
@@ -72,7 +72,7 @@ async function login(req, res){
                     const token = await genJWT(user._id);
                     res.json({
                         token,
-                        msg:'READY!!'});   
+                        msg:'Token generado correctamente'});   
                 }
             }
         }
