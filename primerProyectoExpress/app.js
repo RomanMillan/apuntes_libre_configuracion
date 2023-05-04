@@ -8,6 +8,7 @@ require('dotenv').config();
 /* importamos las rutas */
 const birds = require('./routes/birds.js');
 const birdData = require('./routes/bird.js');
+const monkeys = require('./routes/monkeys.js');
 const user = require('./routes/user.js');
 
 /* Conectando MongoDB */
@@ -23,6 +24,7 @@ app.use(express.json());
 /* ----------------------------------------------------------------------------*/
 /* Usando BD MongoDb  */
 app.use('/birdData',birdData);
+app.use('/monkeys',monkeys);
 app.use('/user',user);
 
 

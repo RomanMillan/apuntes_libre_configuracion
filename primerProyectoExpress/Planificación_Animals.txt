@@ -1,0 +1,62 @@
+USERS
+
+1. Crear un nuevo usuario.
+
+{
+  "name" : "Marina",
+  "email" : "marina@gmail.com",
+  "password" : "123456",
+  "rol" : "USER"
+}
+
+2. Tengo que hacer login. (Genera un token)
+
+{
+  "email" : "marina@gmail.com",
+  "password" : "123456"
+}
+
+TOKEN GENERADO: 
+
+"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDUzNzU3YmY4YTgyMzk5MTM3ZjdiMzEiLCJpYXQiOjE2ODMxOTE0MzUsImV4cCI6MTY4MzIwNTgzNX0.H6-eKj2IOh-a36Gu7T2GZRl1qB84M1cpgvYrQMGJH2I"
+________________________________________________________________________________________
+
+MONKEYS
+
+--Añadir
+3. Para añadir un Monkey tengo que pasarle el id de usuario (Genera un token)
+
+{
+  "name" : "Tití de corona negro",
+  "country" : "Brasil",
+  "type" : "Tití",
+  "descripcion" : "pueden llegar a medir hasta 39 cm",
+  "rolMonkey" : "SOCIAL",
+  "idUser" : "64516cdddb81a9217864ae0b"
+}
+
+TOKEN GENERADO:
+
+"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDUzZDExMWNlOWVjMTUwYzM3ZDVkZTAiLCJpYXQiOjE2ODMyMTQ2MDksImV4cCI6MTY4MzIyOTAwOX0.xFIMibseBA8blmCp1h2iQ0JL7dj4j_Gt8IaSajYQCps"
+
+-- Actualizar
+4. Para actualizar Monkey. 
+   - Añadir todos los campos del monkey 
+   - Pasar por URL el id del monkey
+   - Pasar por headers el token del monkey
+
+-- Mostrar Un mono
+5. Para Mostrar un mono
+   - Pasar por URL el id del monkey
+
+-- Borrar un mono
+6. Para borrar un mono.
+   - Pasar por URL el id del monkey
+   - Ser el creador del objeto y tener rol: ADMIN
+
+-- Mostrar todos
+7. Para mostrar todos los monos
+	- Solo poner la ruta
+	- Se puede filtrar por País (country) y Tipo (type)
+
+

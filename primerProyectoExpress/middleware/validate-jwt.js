@@ -15,7 +15,9 @@ const validateJWT = (req= request, res=response, next) => {
         req.uid = uid;
         next();
     }catch(error){
-        console.log(error)
+        return res.status(401).json({
+            msg: error
+        });
 
     }
 }

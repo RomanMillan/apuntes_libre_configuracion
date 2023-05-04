@@ -1,0 +1,44 @@
+Animales Tarea (MONKEY)
+
+GET (devuelve todo) ✌
+ - (filtrado por query params) Ej: /birds?paises=España&otros=otro✌
+ 
+GET :id  ✌
+ - (mongoId)
+
+POST (crea un elemento) ✌
+ - (JWT) Genera un token ✌
+ - (id usuario) Al crear el elemento, añadir el id del usuario que lo ha creado ✌
+ - (Rol) Añadir un rol ✌
+ - (Validaciones) ✌
+
+PUT : id (requiere todos los campos) ✌
+ - (JWT) Pide el token del mono ✌
+ - (Validaciones)✌
+
+DELETE :id (eliminar el elemento) ✌
+ - (JWT) Pide el token del mono ✌
+ - (ADMIN) solo puede eliminarlo si es rol Admin ✌
+ 
+ _____________________________________________________________________________________________
+ 
+ - GET (devuelve todos los elementos del recurso). 
+ 	- Además debe permitir la utilización de query params, permitiendo que se introduzcan diversos de forma opcional. 
+ 
+ - GET :id (Recibe el id como parámetro y devuelve el elemento con dicho id)
+ 	- Debe tener validación para el id, siendo de tipo mongoId
+ 
+ - POST: (Crea un elemento, deben validarse los campos necesarios)
+ 	- además está protegida por JWT  
+ 	- debe guardar en el elemento el id del usuario que lo ha creado 
+ 
+ - PUT:id (Requiere todos los campos)
+ 	- hay que hacer las mismas validaciones que en el POST. 
+ 	- Además estará protegida por JWT.
+ 
+ - DELETE:id (Eliminar elemento)
+ 	- Protegida por JWT
+ 	- y solo podrán hacerla los usuarios con un rol determinado
+ 
+ - EXTRA: Además del rol elegido, cualquier usuario podrá modificar los elementos que ha añadido.
+ 

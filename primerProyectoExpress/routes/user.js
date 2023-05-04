@@ -6,7 +6,7 @@ const{addUser, deleteUser, login} = require('../controller/user');
 const { check } = require('express-validator');
 const validarCampos = require('../middleware/validate-fields');
 const {isValidRol} =require('../helpers/db_validators');
-const{validateJWT}= require('../middleware/validate-jwt')
+const{validateJWT}= require('../middleware/validate-jwt');
 
 
 /* Añadir usuario */

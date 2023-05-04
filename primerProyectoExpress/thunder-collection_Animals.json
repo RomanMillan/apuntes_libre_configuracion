@@ -1,0 +1,304 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Animals",
+    "dateExported": "2023-05-04T17:33:41.417Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "855b7bf9-9852-4bd7-8b61-226b43afb3a4",
+            "name": "POST User",
+            "containerId": "",
+            "created": "2023-05-04T09:02:25.834Z",
+            "sortNum": 5000
+        },
+        {
+            "_id": "1963ee64-a4a4-48ff-8920-bedbe86a3322",
+            "name": "POST Monkey",
+            "containerId": "",
+            "created": "2023-05-03T19:01:46.735Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "bbe27bb4-9090-4fdd-848e-d98f88a2da11",
+            "name": "PUT Monkey",
+            "containerId": "",
+            "created": "2023-05-04T10:19:17.134Z",
+            "sortNum": 15000
+        },
+        {
+            "_id": "41f688d4-b75c-4523-8bd2-0512aafb7ef6",
+            "name": "GET Monkey",
+            "containerId": "",
+            "created": "2023-05-04T12:19:11.428Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "286b6e99-c484-4064-a023-f4dd8adf02b6",
+            "name": "DELETE Monkey",
+            "containerId": "",
+            "created": "2023-05-04T15:38:34.674Z",
+            "sortNum": 50000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "b27c6e49-d2da-4b2a-80f7-ed35096b5ed7",
+            "colId": "8d31277b-8446-4bc1-acac-c55eec5225bd",
+            "containerId": "1963ee64-a4a4-48ff-8920-bedbe86a3322",
+            "name": "Monkey ",
+            "url": "http://localhost:5800/monkeys/add",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-05-03T19:02:58.760Z",
+            "modified": "2023-05-04T17:15:43.390Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"Tití de corona negro\",\n  \"country\" : \"Brasil\",\n  \"type\" : \"Tití\",\n  \"descripcion\" : \"pueden llegar a medir hasta 39 cm\",\n  \"rolMonkey\" : \"SOCIAL\",\n  \"idUser\" : \"64516d16db81a9217864ae0f\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "52b4621b-fb72-47dc-8d7d-0b243fb8b3a3",
+            "colId": "8d31277b-8446-4bc1-acac-c55eec5225bd",
+            "containerId": "1963ee64-a4a4-48ff-8920-bedbe86a3322",
+            "name": "Error Country vacío",
+            "url": "http://localhost:5800/monkeys/add",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-05-03T19:04:41.823Z",
+            "modified": "2023-05-03T20:38:37.550Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"Tití de corona negro\",\n  \"country\" : \"\",\n  \"type\" : \"Tití\",\n  \"descripcion\" : \"pueden llegar a medir hasta 39 cm\",\n  \"rolMonkey\" : \"SOCIAL\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ca06dc46-3ab3-404b-85d5-745aef3d61c2",
+            "colId": "8d31277b-8446-4bc1-acac-c55eec5225bd",
+            "containerId": "1963ee64-a4a4-48ff-8920-bedbe86a3322",
+            "name": "Error rol no admitido",
+            "url": "http://localhost:5800/monkeys/add",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-05-03T20:40:05.777Z",
+            "modified": "2023-05-03T20:40:55.767Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"Tití blanco\",\n  \"country\" : \"Brasil\",\n  \"type\" : \"Tití\",\n  \"descripcion\" : \"pueden llegar a medir hasta 39 cm\",\n  \"rolMonkey\" : \"FEO\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "26dd3f4f-27f1-45d4-b1cc-b4ca783d9556",
+            "colId": "8d31277b-8446-4bc1-acac-c55eec5225bd",
+            "containerId": "855b7bf9-9852-4bd7-8b61-226b43afb3a4",
+            "name": "Crear Usuario",
+            "url": "http://localhost:5800/user",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-05-04T09:02:45.859Z",
+            "modified": "2023-05-04T09:06:03.281Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"Marina\",\n  \"email\" : \"marina@gmail.com\",\n  \"password\" : \"123456\",\n  \"rol\" : \"USER\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8b295be0-fba7-4336-96e8-a65e5ade3e69",
+            "colId": "8d31277b-8446-4bc1-acac-c55eec5225bd",
+            "containerId": "855b7bf9-9852-4bd7-8b61-226b43afb3a4",
+            "name": "Hacer login",
+            "url": "http://localhost:5800/user/login",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-05-04T09:09:03.966Z",
+            "modified": "2023-05-04T09:10:35.475Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\" : \"marina@gmail.com\",\n  \"password\" : \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ec8b0bb4-38f8-4a8f-a5b8-994e7c9ca128",
+            "colId": "8d31277b-8446-4bc1-acac-c55eec5225bd",
+            "containerId": "bbe27bb4-9090-4fdd-848e-d98f88a2da11",
+            "name": "Monkey",
+            "url": "http://localhost:5800/monkeys/6453808f77c44391dfa30f13",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2023-05-04T11:17:58.492Z",
+            "modified": "2023-05-04T12:03:53.269Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDUzNzU3YmY4YTgyMzk5MTM3ZjdiMzEiLCJpYXQiOjE2ODMxOTE0MzUsImV4cCI6MTY4MzIwNTgzNX0.H6-eKj2IOh-a36Gu7T2GZRl1qB84M1cpgvYrQMGJH2I"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"Tití de corona negro\",\n  \"country\" : \"Colombia\",\n  \"type\" : \"Tití\",\n  \"descripcion\" : \"pueden llegar a medir hasta 39 cm\",\n  \"rolMonkey\" : \"SOCIAL\",\n  \"idUser\" : \"64516cdddb81a9217864ae0b\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "92a8954c-d39c-4e01-b073-c1a77479be20",
+            "colId": "8d31277b-8446-4bc1-acac-c55eec5225bd",
+            "containerId": "bbe27bb4-9090-4fdd-848e-d98f88a2da11",
+            "name": "Monkey Token Erroneo",
+            "url": "http://localhost:5800/monkeys/6453808f77c44391dfa30f13",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2023-05-04T11:48:11.813Z",
+            "modified": "2023-05-04T11:48:11.813Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "cyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDUzNzU3YmY4YTgyMzk5MTM3ZjdiMzEiLCJpYXQiOjE2ODMxOTE0MzUsImV4cCI6MTY4MzIwNTgzNX0.H6-eKj2IOh-a36Gu7T2GZRl1qB84M1cpgvYrQMGJH2I"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"Tití de corona negro\",\n  \"country\" : \"Colombia\",\n  \"type\" : \"Tití\",\n  \"descripcion\" : \"pueden llegar a medir hasta 39 cm\",\n  \"rolMonkey\" : \"SOCIAL\",\n  \"idUser\" : \"64516cdddb81a9217864ae0b\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6917e81d-4213-494f-8703-2a81018917e2",
+            "colId": "8d31277b-8446-4bc1-acac-c55eec5225bd",
+            "containerId": "41f688d4-b75c-4523-8bd2-0512aafb7ef6",
+            "name": "Monkey",
+            "url": "http://localhost:5800/monkeys/6453808f77c44391dfa30f13",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-05-04T12:19:22.865Z",
+            "modified": "2023-05-04T12:21:38.577Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8d81c3c0-144c-42c4-88d6-6bb8cbab509c",
+            "colId": "8d31277b-8446-4bc1-acac-c55eec5225bd",
+            "containerId": "286b6e99-c484-4064-a023-f4dd8adf02b6",
+            "name": "DELETE Usuario no Admin",
+            "url": "http://localhost:5800/monkeys/6453d111ce9ec150c37d5de0",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2023-05-04T15:39:34.903Z",
+            "modified": "2023-05-04T15:52:32.666Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDUzZDExMWNlOWVjMTUwYzM3ZDVkZTAiLCJpYXQiOjE2ODMyMTQ2MDksImV4cCI6MTY4MzIyOTAwOX0.xFIMibseBA8blmCp1h2iQ0JL7dj4j_Gt8IaSajYQCps"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f07236c6-7dbc-473d-a7a1-f56c927c54df",
+            "colId": "8d31277b-8446-4bc1-acac-c55eec5225bd",
+            "containerId": "41f688d4-b75c-4523-8bd2-0512aafb7ef6",
+            "name": "Monkeys",
+            "url": "http://localhost:5800/monkeys/",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-05-04T16:40:30.700Z",
+            "modified": "2023-05-04T16:41:15.472Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f20c26cf-878a-46e2-894e-e893a6572819",
+            "colId": "8d31277b-8446-4bc1-acac-c55eec5225bd",
+            "containerId": "286b6e99-c484-4064-a023-f4dd8adf02b6",
+            "name": "Usuario",
+            "url": "http://localhost:5800/monkeys/6453d51fce9ec150c37d5de7",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2023-05-04T15:52:49.839Z",
+            "modified": "2023-05-04T15:54:50.254Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDUzZDUxZmNlOWVjMTUwYzM3ZDVkZTciLCJpYXQiOjE2ODMyMTU2NDcsImV4cCI6MTY4MzIzMDA0N30.2puKhQUfds6gVzPMLM22OrcsNBvDfMjJ-kXGH_cW9BE"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1182363c-d093-4609-92db-9d5ce829068d",
+            "colId": "8d31277b-8446-4bc1-acac-c55eec5225bd",
+            "containerId": "41f688d4-b75c-4523-8bd2-0512aafb7ef6",
+            "name": "Monkeys Filtrado Query",
+            "url": "http://localhost:5800/monkeys?country=Brasil&type=Manatí",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2023-05-04T17:08:25.215Z",
+            "modified": "2023-05-04T17:32:15.544Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "country",
+                    "value": "Brasil",
+                    "isPath": false
+                },
+                {
+                    "name": "type",
+                    "value": "Manatí",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "ea9415c9-3ae3-4a20-a554-05a43a718bb7",
+            "colId": "8d31277b-8446-4bc1-acac-c55eec5225bd",
+            "containerId": "41f688d4-b75c-4523-8bd2-0512aafb7ef6",
+            "name": "Monkeys Filtrado Query Parametros mal",
+            "url": "http://localhost:5800/monkeys?country=Brasi&type=Manatí",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2023-05-04T17:32:27.754Z",
+            "modified": "2023-05-04T17:33:01.806Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "country",
+                    "value": "Brasi",
+                    "isPath": false
+                },
+                {
+                    "name": "type",
+                    "value": "Manatí",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}
