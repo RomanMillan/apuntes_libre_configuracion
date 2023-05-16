@@ -1,6 +1,7 @@
 /* importamos el express */
 const express = require('express');
 const app = express();
+const fileUpload = require('express-fileupload');
 
 /* usar el archivo .env */
 require('dotenv').config();
@@ -10,6 +11,7 @@ const birds = require('./routes/birds.js');
 const birdData = require('./routes/bird.js');
 const monkeys = require('./routes/monkeys.js');
 const user = require('./routes/user.js');
+const file = require('./routes/file.js')
 
 /* Conectando MongoDB */
 const { dbConnection } = require('./database/config.js');
@@ -20,6 +22,15 @@ connectAtlas();
 
 /* middleware */
 app.use(express.json());
+
+// Manejo de archivos
+app.use(fileUpload({
+    useTempFiles : true,
+    tempFileDir : '/tmp/',
+    createParentPath: true
+}));  
+
+app.use('/file', file);
 
 /* ----------------------------------------------------------------------------*/
 /* Usando BD MongoDb  */
