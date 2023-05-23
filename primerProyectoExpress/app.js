@@ -12,6 +12,7 @@ const birdData = require('./routes/bird.js');
 const monkeys = require('./routes/monkeys.js');
 const user = require('./routes/user.js');
 const file = require('./routes/file.js')
+const fileCloudinary = require('./routes/file.js')
 
 /* Conectando MongoDB */
 const { dbConnection } = require('./database/config.js');
@@ -31,6 +32,11 @@ app.use(fileUpload({
 }));  
 
 app.use('/file', file);
+
+//app.use('/fileCloudinary', fileCloudinary);
+
+
+
 
 /* ----------------------------------------------------------------------------*/
 /* Usando BD MongoDb  */
