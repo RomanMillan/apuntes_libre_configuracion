@@ -2,6 +2,10 @@ const Monkey = require('../models/monkeys');
 const User = require('../models/user');
 const {genJWT} = require('../helpers/genJWT');
 const { request, response } = require('express');
+const{validateJWT}= require('../middleware/validate-jwt');
+
+const express = require('express');
+const app = express();
 
 // Muestra todos los monos
  async function getAllMonkeys(req = request, res = response){
@@ -67,7 +71,8 @@ async function updateMonkey(req = request, res = response){
     // obtenemos los datos
     const id = req.params.id;
     const monkeyUpdate = req.body;
-    
+    const {idUser} = req.query
+
     // Validar si existe el nono
     const idNoValid = await Monkey.findById(id);
     if (!idNoValid){

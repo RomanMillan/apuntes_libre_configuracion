@@ -1,14 +1,6 @@
 const { request, response } = require('express')
 const {uploadFile} = require('../helpers/upload-file')
 
-const cloudinary = require('cloudinary').v2;
-
-cloudinary.config({
-    cloud_name: "dnbj5b6nr",
-    api_key: "492539587623228",
-    api_secret: "au05kT0a2255Eg33CBuBzf13ZBE"
-  });
-
 const upload = async(req, res = response) => {
 
     try {

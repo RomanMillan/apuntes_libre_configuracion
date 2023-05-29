@@ -23,7 +23,6 @@ router.post('/add',[
 
 // Actualizar mono
 router.put('/:id',[
-    validateJWT,
     check('id','No existe el mono').isMongoId(),
     check('name', 'El nombre es obligatorio').not().isEmpty(),
     check('country', 'El pais es obligatorio').not().isEmpty(),
