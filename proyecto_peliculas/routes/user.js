@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const{addUser, deleteUser, login} = require('../controller/user');
+const{addUser, deleteUser, login} = require('../controllers/user');
 
 const { check } = require('express-validator');
 const validarCampos = require('../middleware/validate-fields');
