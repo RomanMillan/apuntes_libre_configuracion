@@ -1,8 +1,7 @@
 /* Importamos el modelo user y el encriptador de contraseñas */
 const User = require('../models/user');
 const bcryptjs = require('bcryptjs');
-const {genJWT} = require('../helpers/genJWT')
-
+const {genJWT} = require('../helpers/genJWT');
 
 /* Añadir un usuario nuevo a la BD */
 async function addUser (req, res) {
@@ -10,7 +9,7 @@ async function addUser (req, res) {
     // Obtenemos los datos
     const { name, email, password, rol } = req.body;
     const newUser = new User({ name, email, password, rol });
-    
+
     //Validar si existe el email
     const emailNoValid = await User.findOne({email});
     if (emailNoValid){
