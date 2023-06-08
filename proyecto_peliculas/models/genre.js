@@ -5,10 +5,9 @@ const GenreSchema = Schema({
         type: String,
         required: [true, 'El nombre es obligatorio'],
         unique: true
-    },  
+    },
     idUser:{
-        type: String,
-        required: [true, 'Es necesario el id del usuario'],  
+        type : String
     }
     
 });

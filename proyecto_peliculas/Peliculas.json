@@ -1,0 +1,302 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Peliculas",
+    "dateExported": "2023-06-08T09:59:31.670Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "853b7e4c-cc3d-4382-ac86-47996dc579d4",
+            "name": "Users",
+            "containerId": "",
+            "created": "2023-06-01T07:20:01.212Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "19a00eb2-6fe4-48db-9acb-d001f3fc4885",
+            "name": "Genres",
+            "containerId": "",
+            "created": "2023-06-02T12:29:32.704Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "4f9b4b4a-2fde-41d6-8227-fbdf58295a60",
+            "name": "Movies",
+            "containerId": "",
+            "created": "2023-06-08T07:12:43.609Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "5f55ac99-204f-4c0d-901c-6d72d8fd0c0c",
+            "colId": "66aabae8-2b07-480d-b26c-d9b5d52178ec",
+            "containerId": "853b7e4c-cc3d-4382-ac86-47996dc579d4",
+            "name": "add users",
+            "url": "http://localhost:5800/user",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-06-01T07:20:18.599Z",
+            "modified": "2023-06-08T08:32:16.570Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"Marina\",\n  \"email\" : \"marina@gmail.com\",\n  \"password\" : \"12345678\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "53723c49-22a5-4c19-919e-2139b3f1bdaa",
+            "colId": "66aabae8-2b07-480d-b26c-d9b5d52178ec",
+            "containerId": "19a00eb2-6fe4-48db-9acb-d001f3fc4885",
+            "name": "get all genre",
+            "url": "http://localhost:5800/genre/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-06-02T17:00:58.484Z",
+            "modified": "2023-06-08T08:00:05.111Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "dc9e0884-7027-4510-ae91-d3aa7631a91c",
+            "colId": "66aabae8-2b07-480d-b26c-d9b5d52178ec",
+            "containerId": "19a00eb2-6fe4-48db-9acb-d001f3fc4885",
+            "name": "get genre",
+            "url": "http://localhost:5800/genre/6480a97449f5bbb26bab1296",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2023-06-08T09:58:30.149Z",
+            "modified": "2023-06-08T09:59:02.246Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "daec8195-a0da-456f-8fcf-7ff6576e51c2",
+            "colId": "66aabae8-2b07-480d-b26c-d9b5d52178ec",
+            "containerId": "19a00eb2-6fe4-48db-9acb-d001f3fc4885",
+            "name": "add genre",
+            "url": "http://localhost:5800/genre",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-06-02T12:29:44.011Z",
+            "modified": "2023-06-07T15:33:38.227Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDgwYTMyOTM5MWNkYzc4M2IyMDMyNTciLCJpYXQiOjE2ODYxNTE5ODYsImV4cCI6MTY4NjE2NjM4Nn0.lLyyN8-RTE-MhDtK-oLAhcumcH0tOEiPQvAE7y4xohg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"Terror\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "691c9349-2bd5-44f6-9b73-86b2c5cac3a3",
+            "colId": "66aabae8-2b07-480d-b26c-d9b5d52178ec",
+            "containerId": "853b7e4c-cc3d-4382-ac86-47996dc579d4",
+            "name": "login",
+            "url": "http://localhost:5800/user/login",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-06-07T11:16:25.095Z",
+            "modified": "2023-06-08T08:32:33.244Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\" : \"marina@gmail.com\",\n  \"password\" : \"12345678\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d6f8ddc9-71e6-4d98-933c-c7df9d261673",
+            "colId": "66aabae8-2b07-480d-b26c-d9b5d52178ec",
+            "containerId": "19a00eb2-6fe4-48db-9acb-d001f3fc4885",
+            "name": "update genre",
+            "url": "http://localhost:5800/genre/6480a97449f5bbb26bab1296",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-06-07T12:09:37.670Z",
+            "modified": "2023-06-08T08:00:07.550Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDgwYTMyOTM5MWNkYzc4M2IyMDMyNTciLCJpYXQiOjE2ODYxNTE5ODYsImV4cCI6MTY4NjE2NjM4Nn0.lLyyN8-RTE-MhDtK-oLAhcumcH0tOEiPQvAE7y4xohg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"Horror\",\n  \"idUser\" : \"culo\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7fbabceb-88dd-4199-9fbc-7a5ee1e38a68",
+            "colId": "66aabae8-2b07-480d-b26c-d9b5d52178ec",
+            "containerId": "4f9b4b4a-2fde-41d6-8227-fbdf58295a60",
+            "name": "get all movies",
+            "url": "http://localhost:5800/movie",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-06-08T07:59:11.877Z",
+            "modified": "2023-06-08T07:59:44.935Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "07038a3d-dfdb-487b-b23c-f4d9b964c540",
+            "colId": "66aabae8-2b07-480d-b26c-d9b5d52178ec",
+            "containerId": "19a00eb2-6fe4-48db-9acb-d001f3fc4885",
+            "name": "delete genre",
+            "url": "http://localhost:5800/genre/64806b502ca841e6717db195",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2023-06-07T11:47:20.936Z",
+            "modified": "2023-06-07T11:59:36.933Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDgwNjZhNzVkZDRiODcyMjkxOGIxOWQiLCJpYXQiOjE2ODYxMzY2OTAsImV4cCI6MTY4NjE1MTA5MH0.z5ONEphD5KhwndLjiW2h5xp6eP8CQT5Q9idsP-vqH4U"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cbab9a84-2669-4a57-ab4e-62519ca97042",
+            "colId": "66aabae8-2b07-480d-b26c-d9b5d52178ec",
+            "containerId": "853b7e4c-cc3d-4382-ac86-47996dc579d4",
+            "name": "update user",
+            "url": "http://localhost:5800/user/6480c47099bc4ff6552d2520",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2023-06-07T17:48:37.242Z",
+            "modified": "2023-06-08T07:59:53.623Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDgwYzQ3MDk5YmM0ZmY2NTUyZDI1MjAiLCJpYXQiOjE2ODYxNjA1MjEsImV4cCI6MTY4NjE3NDkyMX0.d_TOO_gGQE2R4LWFUzaD7tRZm7qQP1q6XXokV5e8XRk"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"Juanita\",\n  \"email\" : \"maria@gmail.com\",\n  \"password\" : \"12345678\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6b6f6c4b-6e12-4966-a1ef-f626e136fc07",
+            "colId": "66aabae8-2b07-480d-b26c-d9b5d52178ec",
+            "containerId": "4f9b4b4a-2fde-41d6-8227-fbdf58295a60",
+            "name": "get movie",
+            "url": "http://localhost:5800/movie/648188c37c2b108467bf0a29",
+            "method": "GET",
+            "sortNum": 75000,
+            "created": "2023-06-08T09:18:22.281Z",
+            "modified": "2023-06-08T09:51:59.924Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "03e7d082-2805-4138-b0a8-3252a3233082",
+            "colId": "66aabae8-2b07-480d-b26c-d9b5d52178ec",
+            "containerId": "853b7e4c-cc3d-4382-ac86-47996dc579d4",
+            "name": "delete user",
+            "url": "http://localhost:5800/user/6480baf9a07fa94572de9e87",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2023-06-07T17:11:39.423Z",
+            "modified": "2023-06-07T17:20:54.631Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDgwYmM1YmRkZDU2ZTczZDQ0ZDA3OWYiLCJpYXQiOjE2ODYxNTg0MzgsImV4cCI6MTY4NjE3MjgzOH0.Esn7J-Ts9r4KgKo76TaDa5qhTtVn5S7_nMdlgFPdgHI"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3a13799b-8e9e-41c7-8032-86c0522c201b",
+            "colId": "66aabae8-2b07-480d-b26c-d9b5d52178ec",
+            "containerId": "4f9b4b4a-2fde-41d6-8227-fbdf58295a60",
+            "name": "add movie",
+            "url": "http://localhost:5800/movie",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2023-06-08T07:13:10.808Z",
+            "modified": "2023-06-08T07:58:08.163Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDgxN2ZlOTgyMzAzNTQzMzcwNzA0YjMiLCJpYXQiOjE2ODYyMDg1MDMsImV4cCI6MTY4NjIyMjkwM30.CE2q_xaVsPukA58P5-ivTmvKQtXaDxsYER_Pynt4BEs"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Saw II\",\n  \"year\": 2004,\n  \"duration\": 120,\n  \"description\": \"Un psicopata que mata\",\n  \"director\": \"Wang\",\n  \"idUser\": \"ldfi\",\n  \"idGenre\": \"6480a97449f5bbb26bab1296\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c2c741e0-e4be-40c6-8068-a89300ace1b5",
+            "colId": "66aabae8-2b07-480d-b26c-d9b5d52178ec",
+            "containerId": "4f9b4b4a-2fde-41d6-8227-fbdf58295a60",
+            "name": "update movie",
+            "url": "http://localhost:5800/movie/64818a108636df600deee9dd",
+            "method": "PUT",
+            "sortNum": 120000,
+            "created": "2023-06-08T08:33:22.830Z",
+            "modified": "2023-06-08T08:55:47.017Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDgxOTIxNzZjOWNiZjRkZmJjMDQ5ZmYiLCJpYXQiOjE2ODYyMTMxNTMsImV4cCI6MTY4NjIyNzU1M30.k1fqsjzooBenp9S22CP9ooJRSDsjalJAt1rOUcQVzso"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Saw II\",\n  \"year\": 2006\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "fa8323f0-3808-43b1-ac47-d355b98bff35",
+            "colId": "66aabae8-2b07-480d-b26c-d9b5d52178ec",
+            "containerId": "4f9b4b4a-2fde-41d6-8227-fbdf58295a60",
+            "name": "delete movie",
+            "url": "http://localhost:5800/movie/64818a108636df600deee9dd",
+            "method": "DELETE",
+            "sortNum": 130000,
+            "created": "2023-06-08T09:10:49.632Z",
+            "modified": "2023-06-08T09:11:40.176Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDgxOTIxNzZjOWNiZjRkZmJjMDQ5ZmYiLCJpYXQiOjE2ODYyMTMxNTMsImV4cCI6MTY4NjIyNzU1M30.k1fqsjzooBenp9S22CP9ooJRSDsjalJAt1rOUcQVzso"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

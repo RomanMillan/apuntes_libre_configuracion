@@ -22,8 +22,7 @@ const MovieSchema = Schema({
         type: String
     },
     idUser:{
-        type: String,
-        required: [true, 'Es necesario el id del usuario'],  
+        type: String
     },
     idGenre:{
         type: String,

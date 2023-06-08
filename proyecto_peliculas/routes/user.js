@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const{addUser, deleteUser, login} = require('../controllers/user');
+const{addUser, updateUser, deleteUser, login} = require('../controllers/user');
 
 const { check } = require('express-validator');
 const validarCampos = require('../middleware/validate-fields');
-const {isValidRol} =require('../helpers/db_validators');
 const{validateJWT}= require('../middleware/validate-jwt');
 
 
@@ -14,9 +13,15 @@ router.post('/',[
     check('name', 'El nombre es obligatorio').not().isEmpty(),
     check('password', 'Password must be between 6 and 12 characters').isLength({ min: 6 }).isLength({max:12}),
     check('email', 'El correo no es válido').isEmail(),
-    check('rol').custom(isValidRol),
     validarCampos
 ],addUser);
+
+// Actualizar usuario (nombre)
+router.put('/:id',[
+    validateJWT,
+    check('name', 'El nombre es obligatorio').not().isEmpty(),
+    validarCampos
+],updateUser)
 
 /* Borrar usuario */
 router.delete('/:id',[

@@ -24,7 +24,7 @@ app.use(express.json());
 // accesos
 app.use('/user',user);
 app.use('/genre', genre);
-app.use('/movie', movie)
+app.use('/movie', movie);
 
 
 /* Establece la conexión */

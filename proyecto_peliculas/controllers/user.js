@@ -10,6 +10,14 @@ async function addUser (req, res) {
     const { name, email, password, rol } = req.body;
     const newUser = new User({ name, email, password, rol });
 
+    //Validar si existe el nombre
+    const nameNoValid = await User.findOne({name});
+    if (nameNoValid){
+        return res.status(400).json({
+            msg: 'El nombre ya está registrado'
+        });
+    }
+
     //Validar si existe el email
     const emailNoValid = await User.findOne({email});
     if (emailNoValid){
@@ -31,14 +39,73 @@ async function addUser (req, res) {
     });
 }
 
-/* Borra usuario */
+async function updateUser (req, res){
+    const id = req.params.id;
+    const idUser =  req.uid;
+    const { name } = req.body;
+
+    //Validar si existe el nombre
+    const nameNoValid = await User.findOne({name});
+    if (nameNoValid){
+        return res.status(400).json({
+            msg: 'El nombre ya está registrado'
+        });
+    }
+
+    // Validar si existe el usuario
+    const user = await User.findById(id);
+    if (!user){
+        return res.status(400).json({
+            msg: 'El usuario no está registrado'
+        });
+    }
+
+    // Validar que es el dueño de la cuenta
+    if(id != idUser){
+        return res.status(400).json({
+            msg: 'No tienes permiso para modificar al usuario'
+        });
+    }
+
+    //Lo combertimos a objeto
+    const userUpdate = { 
+        name : name
+    }
+
+    await User.findByIdAndUpdate(id, userUpdate);
+
+    res.json({
+        userUpdate
+    });
+}
+
+/* Borrar usuario */
 async function deleteUser(req,res){
     const id = req.params.id;
-    const user = await User.findByIdAndUpdate(id,{"active": false});
-    const token = req.user;
+    const idUser = req.uid;      
+
+
+    // Validar si existe el usuario
+    const user = await User.findById(id);
+    if (!user){
+        return res.status(400).json({
+            msg: 'El usuario no está registrado'
+        });
+    }
+
+    // Validar que es el dueño de la cuenta
+    if(id != idUser){
+        return res.status(400).json({
+            msg: 'No tienes permiso para borrar el usuario'
+        });
+    }
+
+
+    const userDelete = await User.findByIdAndRemove(id)
+    //const user = await User.findByIdAndUpdate(id,{"active": false});
+    
     res.json({
-        user, 
-        token
+        userDelete
     });
 }
 
@@ -84,4 +151,4 @@ async function login(req, res){
 }
 
 
-module.exports = {addUser, deleteUser, login};
+module.exports = {addUser, updateUser,  deleteUser, login};
