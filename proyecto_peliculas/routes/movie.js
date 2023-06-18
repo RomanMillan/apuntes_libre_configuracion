@@ -7,6 +7,7 @@ const { check } = require('express-validator');
 const validarCampos = require('../middleware/validate-fields');
 const{validateJWT}= require('../middleware/validate-jwt');
 
+
 // obtener todas las peliculas
 router.get('/', getAllMovies);
 
@@ -17,7 +18,7 @@ router.get('/:id',[
 ],getMovie)
 
 /* Añadir pelicula */
-router.post('/',[
+router.post('/', [
     validateJWT,
     check('name', 'El nombre es obligatorio').not().isEmpty(),
     check('idGenre').not().isEmpty(),

@@ -1,12 +1,20 @@
 const express = require('express');
 const router = express.Router();
 
-const{addUser, updateUser, deleteUser, login} = require('../controllers/user');
+const{getUsers, getUser, addUser, updateUser, deleteUser, login} = require('../controllers/user');
 
 const { check } = require('express-validator');
 const validarCampos = require('../middleware/validate-fields');
 const{validateJWT}= require('../middleware/validate-jwt');
 
+// obtiene todos los usuarios
+router.get('/',getUsers);
+
+// obtiene un usuario
+router.get('/:id',[
+    check('id','No existe el usuario').isMongoId(),
+    validarCampos
+],getUser);
 
 /* Añadir usuario */
 router.post('/',[

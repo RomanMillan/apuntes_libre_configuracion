@@ -3,7 +3,7 @@ const User = require('../models/user');
 const Genre = require('../models/genre');
 const { request, response } = require('express');
 
-
+const cloudinary = require('../utils/cloudinary');
 
 // obtener todos las peliculas
 async function getAllMovies(req = request, res = response){
@@ -43,6 +43,7 @@ async function addMovie(req = request, res = response) {
     // obtenemos los datos
     const { name, year, duration, description, director, cover, idGenre } = req.body;
     const uid = req.uid;
+
 
     // Validar si existe el nombre (pelicula)
     const nameNoValid = await Movie.findOne({name});

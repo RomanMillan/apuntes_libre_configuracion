@@ -3,6 +3,32 @@ const User = require('../models/user');
 const bcryptjs = require('bcryptjs');
 const {genJWT} = require('../helpers/genJWT');
 
+// obtiene todos los usuarios
+async function getUsers(req, res){
+    const user = await User.find();
+    if(user.lenght === 0){
+        return res.status(400).json({
+            msg: 'No se ha encontrado ningún usuario'
+        });
+    }
+    res.send(user);
+}
+
+// obtiene un solo usuario
+async function getUser(req, res){
+    const id = req.params.id;
+    const  user = await User.findById(id);
+    if(!user){
+        return res.status(400).json({
+         msg : 'El usuario no está registrado'
+        })
+     }
+ 
+     res.send(
+         user
+     );
+}
+
 /* Añadir un usuario nuevo a la BD */
 async function addUser (req, res) {
     
@@ -151,4 +177,4 @@ async function login(req, res){
 }
 
 
-module.exports = {addUser, updateUser,  deleteUser, login};
+module.exports = {getUsers, getUser, addUser, updateUser,  deleteUser, login};
