@@ -42,8 +42,6 @@ En este archivo (genJWT) podemos configurar entre otras cosas cuento tiempo le d
 
 No podemos olvidar exportar exportar la función flecha, para poder llamarla desde otros archivos.
 
-
-
 ### controllers/user.js
 
 En el controlador tenemos que usar el token, para generarlo y también comprobar si es correcto el token
@@ -97,8 +95,6 @@ En la función de hacer login a parte de otras muchas comprobaciónes de si el u
 
 Si todo está correcto por último generamos el token, llamando a la función del archivo genJWT.js y una vez generado se lo pasamos, para que el usuario pueda copiarlo y usarlo posteriormente cuando se le pida.
 
-
-
 ### middleware/validate-jwt.js
 
 ```javascript
@@ -128,6 +124,12 @@ const validateJWT = async(req= request, res=response, next) => {
                 msg: 'Token no válido - usuario deshabilitado' 
             })
         }
+        /* 
+            Con esto retornamos el uid (id del usuario)
+            Y podemos obtener al usuario y verificar si es él, etc.
+            En el controllador podemos obtenerlo.
+            ej: const id = req.uid;
+        */
         req.uid = uid;
         next();
     }catch(error){
