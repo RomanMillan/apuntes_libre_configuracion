@@ -8,7 +8,7 @@ Para crear un proyecto React, lo primero que vamos a hacer es crearlo desde vite
 
 3. Seleccionamos: React
 
-4. Después: TypeScript
+4. Después: TypeScript o JavaScript
 
 5. entramos en el proyecto: `cd primer-proyecto `
 
