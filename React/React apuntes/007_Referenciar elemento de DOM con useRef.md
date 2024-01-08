@@ -16,6 +16,10 @@ const addLi = () =>{
   refUl.current.appendChild(li);
 }
 
+/*creamos las constante que usara el useRef*/
+const refInput = useRef;
+const refUl = useRef;
+
 /*Referenciamos el input para obtener el valor*/
 <input type="text" ref={refInput} /
 /*Añadimos un botón para que se active la función addLi()*/
